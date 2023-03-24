@@ -62,6 +62,34 @@ class Pato(Animal):
 herdem da classe Veiculo e sobrescrevam o método ligar() para imprimir “O carro está ligado”, “A moto está ligada” e “A bicicleta está pronta” 
 respectivamente. Crie alguns objetos dessas classes e teste o método ligar() em cada um.
 '''
+class Veiculo:
+    def __init__(self,modelo,cor,ano):
+        self.modelo = modelo
+        self.cor = cor
+        self.ano = ano
+
+    def ligar(self):
+        print("")
+
+class Carro(Veiculo):
+    def __init__(self,modelo,cor,ano):
+        super().__init__(modelo,cor,ano)
+    def ligar(self):
+        print("O carro está lidado.")
+
+class Moto(Veiculo):
+    def __init__(self,modelo,cor,ano):
+        super().__init__(modelo,cor,ano)
+    def ligar(self):
+        print("O moto está lidado.")
+
+class Bicicleta(Veiculo):
+    def __init__(self,modelo,cor,ano):
+        super().__init__(modelo,cor,ano)
+    def ligar(self):
+        print("O bicicleta está pronta.")
+
+
 
 
 
