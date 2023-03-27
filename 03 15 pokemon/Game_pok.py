@@ -22,7 +22,7 @@ class Pokemon:
                 pass
             elif x == "0":
                 break
-            print("ROUND",contador)
+            print("""            ROUND""",contador)
             contador += 1
             
             if self.elemento == "fogo":
@@ -48,7 +48,7 @@ class Pokemon:
             if self.Speed > oponente.Speed:
 
                 dano = (self.Atk*self.vantagem) - oponente.Def
-                if dano >= 0:
+                if dano > 0:
                     oponente.Hp = oponente.Hp - dano
                     print(self.name,"give",dano,"of damage in",oponente.name,"!")
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
@@ -58,7 +58,7 @@ class Pokemon:
                     break
                 
                 dano = (oponente.Atk*oponente.vantagem) - self.Def
-                if dano >= 0:
+                if dano > 0:
                     self.Hp = self.Hp - dano
                     print(oponente.name,"give",dano,"of damage in ",self.name,"!")
                     print("The",self.name,"Hp downs to",self.Hp,"!")
@@ -70,7 +70,7 @@ class Pokemon:
             if oponente.Speed > self.Speed:
 
                 dano = (oponente.Atk*oponente.vantagem) - self.Def
-                if dano >= 0:
+                if dano > 0:
                     self.Hp = self.Hp - dano
                     print(oponente.name,"give",dano,"of damage in ",self.name,"!")
                     print("The",self.name,"Hp downs to",self.Hp,"!")
@@ -80,7 +80,7 @@ class Pokemon:
                     break
 
                 dano = (self.Atk*self.vantagem) - oponente.Def
-                if dano >= 0:
+                if dano > 0:
                     oponente.Hp = oponente.Hp - dano
                     print(self.name,"give",dano,"of damage in",oponente.name,"!")
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
@@ -89,18 +89,6 @@ class Pokemon:
                     print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
                     break
             
-
-class Charizard(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
-        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
-class Blastoise(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
-        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
-class Venussaur(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
-        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
-         
-
 poke001 = Pokemon("Bulbasauro",1,"grama",45,65,65,45)
 poke002 = Pokemon("Ivysaur",2,"grama",60,80,80,60)
 poke003 = Pokemon("Venusaur",3,"grama",80,100,100,80)
@@ -113,30 +101,55 @@ poke007 = Pokemon("Squirtle",1,"agua",44,50,65,43)
 poke008 = Pokemon("Wartortle",2,"agua",59,65,80,58)
 poke009 = Pokemon("Blastoise",3,"agua",79,85,105,78)
 
+lista_pokemon = []
 
-poke001.Battle(poke004)
+for i in range(1,10): #152
+    if i < 10:
+        lista_pokemon.append(globals()[f"poke00{i}"])
+    elif i >=10 and i <100:
+        lista_pokemon.append(globals()[f"poke0{i}"])
+    else:
+        lista_pokemon.append(globals()[f"poke{i}"])
 
+lista_pokemon_t1 = []
+lista_pokemon_t2 = []
+lista_pokemon_t3 = []
 
-# lista_pokemon = [poke001, poke004 , poke006]
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 1:
+        lista_pokemon_t1.append(Pokemon)
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 2:
+        lista_pokemon_t2.append(Pokemon)
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 3:
+        lista_pokemon_t3.append(Pokemon)
 
-# print("Escolha o pokemon que deseja iniciar!")
-# print('''Escolha entre: 
-#   1 -- Bulbasauro
-#   2 -- Charmande
-#   3 -- Squirtle''')
+print("Choose the Pokemon you want to start!")
+print('''Choose the Pokemon: 
+  1 -- Bulbasauro
+  2 -- Charmande
+  3 -- Squirtle''')
 
-# str_pokemon = input("Escolha seu pokemon inicial:")
-# match str_pokemon:
-#     case "1":
-#         str_pokemon = poke001
-#     case "2":
-#         str_pokemon = poke004
-#     case "3":
-#         str_pokemon = poke006
-#     case _:
-#         print("O Pokemon escolhido é inválido! Escolha um inicial válido.")
+str_pokemon = input("Choose your starter pokemon:")
+match str_pokemon:
+    case "1":
+        str_pokemon = poke001
+    case "2":
+        str_pokemon = poke004
+    case "3":
+        str_pokemon = poke007
+    case _:
+        print("The chosen Pokemon is invalid! Choose a valid initial.")
 
-# str_pokemon.Battle(random.choice(lista_pokemon))
+if str_pokemon == poke001:
+    lista_pokemon_t1.remove(poke001)
+if str_pokemon == poke004:
+    lista_pokemon_t1.remove(poke004)
+if str_pokemon == poke007:
+    lista_pokemon_t1.remove(poke007)
+
+str_pokemon.Battle(random.choice(lista_pokemon_t1))
 
 
 
