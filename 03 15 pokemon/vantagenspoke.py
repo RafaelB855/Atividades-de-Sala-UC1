@@ -226,23 +226,23 @@ poke139 = Pokemon("Omastar",3,"pedra",70,125,115,55)
 poke140 = Pokemon("Kabuto",2,"pedra",30,80,90,55)
 poke141 = Pokemon("Kabutops",3,"pedra",60,115,105,80)
 
-poke142 = Pokemon("Aerodactyl",3,"none",0,0,0,0)
+poke142 = Pokemon("Aerodactyl",3,"pedra",80,105,75,130)
 
-poke143 = Pokemon("Snorlax",3,"none",0,0,0,0)
+poke143 = Pokemon("Snorlax",3,"normal",160,110,110,30)
 
-poke144 = Pokemon("Articuno",4,"none",0,0,0,0)
+poke144 = Pokemon("Articuno",4,"gelo",90,95,125,85)
 
-poke145 = Pokemon("Zapdos",4,"none",0,0,0,0)
+poke145 = Pokemon("Zapdos",4,"eletrico",90,125,90,100)
 
-poke146 = Pokemon("Moltres",4,"none",0,0,0,0)
+poke146 = Pokemon("Moltres",4,"fogo",90,125,90,90)
 
-poke147 = Pokemon("Dratini",1,"none",0,0,0,0)
-poke148 = Pokemon("Dragonair",2,"none",0,0,0,0)
-poke149 = Pokemon("Dragonite",4,"none",0,0,0,0)
+poke147 = Pokemon("Dratini",1,"dragao",41,64,50,50)
+poke148 = Pokemon("Dragonair",2,"dragao",61,84,70,70)
+poke149 = Pokemon("Dragonite",4,"dragao",91,134,100,80)
 
-poke150 = Pokemon("Mewtwo",5,"none",0,0,0,0)
+poke150 = Pokemon("Mewtwo",5,"psiquico",106,154,90,130)
 
-poke151 = Pokemon("Mew",4,"none",0,0,0,0)
+poke151 = Pokemon("Mew",4,"psiquico",100,100,100,100)
 
 
 
