@@ -11,6 +11,9 @@ class Pokemon:
         self.Speed = Speed
 
     def Battle(self, oponente):
+
+        print(lista_pokemon_t1(self.name))
+
         print("IN BATTLE",self.name," VS ",oponente.name)
         contador = 1
         self.vantagem = 1
@@ -78,10 +81,11 @@ class PokeNormal(Pokemon):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self,oponente):
-        vantagem = 1
 
         if oponente.elemento == "lutador":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeGrama(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
@@ -136,198 +140,212 @@ class PokeEletrico(Pokemon):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "agua":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "voador":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
         
 class PokeVoador(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "insecto":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "lutador":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "grama":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
      
 class PokeGelo(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
  
         if oponente.elemento == "dragao":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "voador":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "grama":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "terra":
-            vantagem = 1.5        
+            return 1.5  
+        else:
+            return 1.0      
 
 class PokePedra(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
         
         if oponente.elemento == "insecto":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "fogo":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "voador":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "gelo":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeTerra(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "eletrico":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "fogo":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "venenoso":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "pedra":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "aço":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeAço(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
     
         if oponente.elemento == "fada":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "gelo":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "pedra":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeLutador(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "sombrio":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "gelo":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "normal":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "pedra":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "aço":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeSombrio(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
         
         if oponente.elemento == "fantasma":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "psiquico":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokePsiquico(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "lutador":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "venenoso":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeVenenoso(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self,oponente):
-        vantagem = 1
         
         if oponente.elemento == "fada":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "grama":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeInsecto(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
         
         if oponente.elemento == "sombrio":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "grama":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "psiquico":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeFada(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "sombrio":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "dragao":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "lutador":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeFantasma(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "fantasma":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "psiquico":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 class PokeDragao(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
         super().__init__(name, tier, elemento, Hp, Atk, Def, Speed)
 
     def Check_Vantagem(self, oponente):
-        vantagem = 1
 
         if oponente.elemento == "dragao":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "fada":
-            vantagem = 1.5
+            return 1.5
         if oponente.elemento == "galo":
-            vantagem = 1.5
+            return 1.5
+        else:
+            return 1.0
 
 poke001 = PokeGrama("Bulbasauro",1,"grama",45,65,65,45)
 poke002 = PokeGrama("Ivysaur",2,"grama",60,80,80,60)

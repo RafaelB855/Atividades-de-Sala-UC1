@@ -14,6 +14,9 @@ class Pokemon:
         self.Def = Def
         self.Speed = Speed
 
+    def getname(self):
+        return self.name
+
 
 class PokeNormal(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
@@ -515,3 +518,34 @@ poke149 = PokeDragao("Dragonite",4,"dragao",91,134,100,80)
 poke150 = PokePsiquico("Mewtwo",5,"psiquico",106,154,90,130)
 
 poke151 = PokePsiquico("Mew",4,"psiquico",100,100,100,100)
+
+
+lista_pokemon = []
+
+for i in range(1,152):
+    if i < 10:
+        lista_pokemon.append(globals()[f"poke00{i}"])
+    elif i >=10 and i <100:
+        lista_pokemon.append(globals()[f"poke0{i}"])
+    else:
+        lista_pokemon.append(globals()[f"poke{i}"])
+
+lista_pokemon_t1 = []
+lista_pokemon_t2 = []
+lista_pokemon_t3 = []
+lista_pokemon_t4 = []
+
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 1:
+        lista_pokemon_t1.append(Pokemon)
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 2:
+        lista_pokemon_t2.append(Pokemon)
+for Pokemon in lista_pokemon:
+    if Pokemon.tier == 3:
+        lista_pokemon_t3.append(Pokemon)
+for Pokemon in lista_pokemon:
+    if Pokemon.tier <= 4:
+        lista_pokemon_t4.append(Pokemon)
+
+            
