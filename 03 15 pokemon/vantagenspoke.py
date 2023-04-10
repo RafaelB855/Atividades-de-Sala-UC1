@@ -603,6 +603,3 @@ for i in range(1,152):
         lista_pokemon.append(globals()[f"poke0{i}"])
     else:
         lista_pokemon.append(globals()[f"poke{i}"])
-
-
-                
