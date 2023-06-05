@@ -1,24 +1,15 @@
 import random
+import Game_Main_Poke
 import vantagenspoke
 
 Bag_Pok = []
 Bag_pc = []
 
-lista_pokemon = vantagenspoke.lista_pokemon
 
-lista_tier1 = []
-lista_tier2 = []
-lista_tier3 = []
+lista_tier1 = Game_Main_Poke.lista_pokemon_t1
+lista_tier2 =  Game_Main_Poke.lista_pokemon_t2
+lista_tier3 =  Game_Main_Poke.lista_pokemon_t3
 
-for Pokemon in lista_pokemon:
-    if Pokemon.tier == 1:
-        lista_tier1.append(Pokemon)
-for Pokemon in lista_pokemon:
-    if Pokemon.tier == 2:
-        lista_tier2.append(Pokemon)
-for Pokemon in lista_pokemon:
-    if Pokemon.tier == 3:
-        lista_tier3.append(Pokemon)
 
 poke_tier1_grama = []
 poke_tier1_agua = []
@@ -187,7 +178,7 @@ def change_team(pokemon1, pokemon2):
         Bag_pc.remove(pokemon2) and Bag_Pok.append(pokemon2)
 
 def found_lake():
-    pok_lake = random.choice([poke_tier2_agua, poke_tier2_voador])
+    pok_lake = random.choice([poke_tier1_agua, poke_tier1_voador])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
@@ -201,7 +192,7 @@ def found_lake():
 
 def found_bush():
 
-    pok_bush = random.choice([poke_tier2_eletrico,poke_tier2_fogo,poke_tier2_grama,poke_tier2_fantasma,poke_tier2_fada,poke_tier2_lutador,poke_tier2_normal,poke_tier2_pedra,poke_tier2_venenoso,poke_tier2_psiquico,poke_tier2_voador])
+    pok_bush = random.choice([poke_tier1_eletrico,poke_tier1_fogo,poke_tier1_grama,poke_tier1_fantasma,poke_tier1_fada,poke_tier1_lutador,poke_tier1_normal,poke_tier1_pedra,poke_tier1_venenoso,poke_tier1_psiquico,poke_tier1_voador])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
@@ -246,5 +237,3 @@ def crush_beach():
         invalid = "INVALID!!"
         return invalid
     
-def linha():
-    print("----"*10)

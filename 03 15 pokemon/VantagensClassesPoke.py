@@ -89,8 +89,7 @@ class Pokemon:
                     return "Win"
                     
     def get_name_pok(self):
-        name = print(f"{self.name} -- {self.elemento}") 
-        return name
+        return f"{self.name} -- {self.elemento}" 
     
 class PokeNormal(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
@@ -603,3 +602,6 @@ for i in range(1,152):
         lista_pokemon.append(globals()[f"poke0{i}"])
     else:
         lista_pokemon.append(globals()[f"poke{i}"])
+
+
+                
